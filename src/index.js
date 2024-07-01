@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />
-);
+  );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Se vuoi iniziare a misurare le prestazioni della tua app, puoi passare una funzione
+// per registrare i risultati (per esempio: reportWebVitals(console.log))
+// oppure inviare i dati a un endpoint di analytics. Scopri di più: https://bit.ly/CRA-vitals
 reportWebVitals();

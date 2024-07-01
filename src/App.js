@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Welcome from './components/Welcome';
 import AllTheBooks from './components/AllTheBooks';
-import MyFooter from './components/Footer';
-import { Container } from 'react-bootstrap'
-
+import MyFooter from './components/MyFooter';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
@@ -19,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
