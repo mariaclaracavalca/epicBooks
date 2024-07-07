@@ -1,20 +1,17 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+// src/components/Welcome.js
+import React from 'react';
+import { Alert, Container } from 'react-bootstrap';
 
-function BasicExample() {
-  return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-  );
-}
+const Welcome = () => (
+  <Container className="mt-5">
+    <Alert variant="success">
+      <Alert.Heading>Benvenuti in EpiBooks!</Alert.Heading>
+      <p>
+        La tua libreria online di fiducia.
+      </p>
+    </Alert>
+    <h1 className="display-4">EpiBooks</h1>
+  </Container>
+);
 
-export default BasicExample;
+export default Welcome;

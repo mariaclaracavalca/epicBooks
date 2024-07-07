@@ -1,22 +1,19 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+// src/components/MyNav.js
+import React from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
 
-function ColorSchemesExample() {
-  return (
-    <>
-      <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
-  );
-}
+const MyNav = () => (
+  <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar.Brand href="#">EpiBooks</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mr-auto">
+        <Nav.Link href="#">Home</Nav.Link>
+        <Nav.Link href="#">Libreria</Nav.Link>
+        <Nav.Link href="#">Acquisto</Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
+);
 
-export default ColorSchemesExample;
+export default MyNav;
