@@ -1,4 +1,3 @@
-// src/components/AddComment.js
 import React, { useState } from 'react';
 
 const AddComment = ({ asin, fetchComments }) => {
@@ -12,7 +11,7 @@ const AddComment = ({ asin, fetchComments }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjhhY2RlMGQzOTNmYzAwMTU5NzQwMDgiLCJpYXQiOjE3MjAzNzI3MDQsImV4cCI6MTcyMTU4MjMwNH0.6nbm9PafW7ftGVre2a-8bt96VmfobiYTt5MJZ1PdYfg',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjkwMmJjM2Y4Y2FlZTAwMTU0ZmEzODIiLCJpYXQiOjE3MjA3MjQ0MTksImV4cCI6MTcyMTkzNDAxOX0.AYA2JJln8-7reKA7G6MlJxkrO2j-d4B1L3VovAhC69E',
         },
         body: JSON.stringify({
           comment,
