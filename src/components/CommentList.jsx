@@ -1,11 +1,10 @@
-// src/components/CommentList.js
 import React from 'react';
 import SingleComment from './SingleComment';
 
-const CommentList = ({ comments }) => (
+const CommentList = ({ comments, onDeleteComment }) => (
   <div>
     {comments.map(comment => (
-      <SingleComment key={comment._id} comment={comment} />
+      <SingleComment key={comment._id} comment={comment} onDelete={onDeleteComment} />
     ))}
   </div>
 );

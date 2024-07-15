@@ -1,6 +1,6 @@
-// src/components/SingleBook.js
 import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import CommentArea from './CommentArea';
 
 const SingleBook = ({ book }) => {
@@ -16,6 +16,9 @@ const SingleBook = ({ book }) => {
         <Card.Body>
           <Card.Title>{book.title}</Card.Title>
           <Card.Text>${book.price}</Card.Text>
+          <Button as={Link} to={`/books/${book.asin}`} variant="primary">
+            Più dettagli 
+          </Button>
         </Card.Body>
       </Card>
       {selected && <CommentArea asin={book.asin} />}

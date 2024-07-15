@@ -1,4 +1,3 @@
-// src/components/CommentArea.js
 import React, { useState, useEffect, useCallback } from 'react';
 import CommentList from './CommentList';
 import AddComment from './AddComment';
@@ -10,7 +9,7 @@ const CommentArea = ({ asin }) => {
     try {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/books/${asin}/comments/`, {
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjhhY2RlMGQzOTNmYzAwMTU5NzQwMDgiLCJpYXQiOjE3MjAzNzI3MDQsImV4cCI6MTcyMTU4MjMwNH0.6nbm9PafW7ftGVre2a-8bt96VmfobiYTt5MJZ1PdYfg',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk1NWM0MDE5NmQ3YjAwMTVkNmI1NGQiLCJpYXQiOjE3MjEwNjQ1MTIsImV4cCI6MTcyMjI3NDExMn0.4KHbqLVURWAvtarewAwpwrlr_Ul-VOU9oUNWsiifvaE',
         },
       });
       if (response.ok) {
@@ -28,9 +27,28 @@ const CommentArea = ({ asin }) => {
     fetchComments();
   }, [fetchComments]);
 
+  const handleDeleteComment = async (commentId) => {
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${commentId}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk1NWM0MDE5NmQ3YjAwMTVkNmI1NGQiLCJpYXQiOjE3MjEwNjQ1MTIsImV4cCI6MTcyMjI3NDExMn0.4KHbqLVURWAvtarewAwpwrlr_Ul-VOU9oUNWsiifvaE',
+        },
+      });
+      if (response.ok) {
+        setComments(comments.filter(comment => comment._id !== commentId));
+        console.log('Commento eliminato con successo');
+      } else {
+        console.error('Errore durante l\'eliminazione del commento');
+      }
+    } catch (error) {
+      console.error('Errore:', error);
+    }
+  };
+
   return (
     <div>
-      <CommentList comments={comments} />
+      <CommentList comments={comments} onDeleteComment={handleDeleteComment} />
       <AddComment asin={asin} fetchComments={fetchComments} />
     </div>
   );
