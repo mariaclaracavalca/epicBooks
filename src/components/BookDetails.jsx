@@ -1,37 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Row, Col, Card } from 'react-bootstrap';
+import romance from '../data/romance.json';
+import CommentArea from './CommentArea';
 
 const BookDetails = () => {
   const { asin } = useParams();
-  const [book, setBook] = useState(null);
+  const foundBook = romance.find((book) => book.asin === asin);
 
-  useEffect(() => {
-    const fetchBookDetails = async () => {
-      try {
-        const response = await fetch(`https://striveschool-api.herokuapp.com/api/books/${asin}`);
-        if (response.ok) {
-          const data = await response.json();
-          setBook(data);
-        } else {
-          console.error('Errore nel recupero dei dettagli del libro');
-        }
-      } catch (error) {
-        console.error('Errore:', error);
-      }
-    };
-
-    fetchBookDetails();
-  }, [asin]);
-
-  if (!book) {
-    return <div>Caricando...</div>;
+  if (!foundBook) {
+    return <div>Libro non trovato</div>;
   }
 
   return (
-    <div>
-      <h2>{book.title}</h2>
-      <p>{book.description}</p>
-    </div>
+    <Row className="justify-content-center">
+      <Col md={6}>
+        <Card>
+          <Card.Img variant="top" src={foundBook.img} />
+          <Card.Body>
+            <Card.Title style={{ color: 'black' }}>
+              {foundBook.title}
+            </Card.Title>
+            <Card.Text>
+              {foundBook.description}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <CommentArea asin={asin} />
+      </Col>
+    </Row>
   );
 };
 

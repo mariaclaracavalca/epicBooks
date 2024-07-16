@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import CommentArea from './CommentArea';
 
 const SingleBook = ({ book }) => {
   const [selected, setSelected] = useState(false);
@@ -16,12 +15,11 @@ const SingleBook = ({ book }) => {
         <Card.Body>
           <Card.Title>{book.title}</Card.Title>
           <Card.Text>${book.price}</Card.Text>
-          <Button as={Link} to={`/books/${book.asin}`} variant="primary">
+          <Link to={`/books/${book.asin}`} className="btn btn-sm btn-secondary">
             Più dettagli 
-          </Button>
+          </Link>
         </Card.Body>
       </Card>
-      {selected && <CommentArea asin={book.asin} />}
     </>
   );
 };

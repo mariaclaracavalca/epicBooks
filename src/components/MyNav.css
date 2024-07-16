@@ -1,0 +1,29 @@
+/* src/components/MyNav.css */
+.custom-navbar {
+    background: linear-gradient(90deg, #ff69b4, #dda0dd);
+    padding: 1rem 2rem;
+  }
+  
+  .custom-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 2rem;
+  }
+  
+  .custom-nav {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .custom-nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  .custom-nav-link:hover {
+    color: #ffb6c1;
+  }
+  

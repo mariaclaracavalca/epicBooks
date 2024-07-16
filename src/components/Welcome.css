@@ -1,0 +1,25 @@
+
+.welcome-container {
+    background-color: #E6E6FA; 
+    padding: 10px; 
+    border-radius: 5px; 
+  }
+  
+  .welcome-heading {
+    text-align: center;
+    color: purple;
+  }
+  
+  .welcome-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-subtext {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+  }
+  

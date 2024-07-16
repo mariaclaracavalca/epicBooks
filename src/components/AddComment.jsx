@@ -25,7 +25,7 @@ const AddComment = ({ asin, fetchComments }) => {
         setRate(1);
         fetchComments(); 
       } else {
-        alert('Errore nella aggiunta di un commento');
+        alert('Non hai aggiunto nessun commento');
       }
     } catch (error) {
       console.error('Errore:', error);
@@ -35,7 +35,7 @@ const AddComment = ({ asin, fetchComments }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
-        <label htmlFor="comment" className="form-label">Comment</label>
+        <label htmlFor="comment" className="form-label">Commento</label>
         <textarea
           className="form-control"
           id="comment"
@@ -57,7 +57,7 @@ const AddComment = ({ asin, fetchComments }) => {
           ))}
         </select>
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-sm btn-secondary">Submit</button>
     </form>
   );
 };
